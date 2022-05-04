@@ -11,10 +11,11 @@ let producto = Number (prompt (`Ingresá el número de la opción elegida:
             3. Torta Lemon Pie
             4. Budín de zanahoria
             5. Budín de frutos secos
-            6. Ver forma de entrega
-            7. Salir`));
+            6. Box de porciones
+            7. Ver forma de entrega
+            8. Salir`));
 let precioTotal = 0;
-while (producto != 6 && producto != 7) {
+while (producto != 7 && producto != 8) {
     let cantidad = Number (prompt (`Ingresá la cantidad necesaria de ese producto`));
     if (producto == 1) {
         productoPrecio = 2000 * cantidad;
@@ -28,8 +29,15 @@ while (producto != 6 && producto != 7) {
     else if (producto == 4) {
         productoPrecio = 1300 * cantidad;
     }
-    else {
+    else if (producto == 5) {
         productoPrecio = 1450 * cantidad;
+    }
+    else {
+        let porciones = Number (prompt (`Ingresá la cantidad de porciones dentro del box (máximo 5 porciones). Considerá que serán porciones individuales.`));
+        for (let i = 0; i < porciones; i++) {
+            let descripcion = prompt(`Ingresá la descripción de la porción a incluir en el box`);
+        }
+        productoPrecio = 600 * porciones;
     }
     precioTotal = productoPrecio+precioTotal;
     console.log ("El precio de los productos es:",precioTotal);
@@ -39,10 +47,11 @@ while (producto != 6 && producto != 7) {
             3. Torta Lemon Pie
             4. Budín de zanahoria
             5. Budín de frutos secos
-            6. Ver forma de entrega
-            7. Salir`)); 
+            6. Box de porciones
+            7. Ver forma de entrega
+            8. Salir`)); 
 }
-if (producto==6) {
+if (producto==7) {
     if (precioTotal != 0) {
         let entrega = Number (prompt (`Ingresá el número de la forma de entrega elegida: 
         1. Envío a domicilio
