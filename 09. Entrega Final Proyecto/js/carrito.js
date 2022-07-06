@@ -45,3 +45,10 @@ function eliminarProducto(e, idx){
     newCarrito.splice(idx, 1);
     localStorage.setItem("carrito", JSON.stringify(newCarrito));
 }
+mostrarTotalPrecioCarrito ();
+function mostrarTotalPrecioCarrito () {
+    const precioTotalCarrito = localStorage.getItem("precioAcumulado");
+    let rowPrecioCarrito = document.createElement("div");
+        rowPrecioCarrito.innerHTML = `<div class="border-top border-4 bg-opacity-5 py-3 px-5">PRECIO TOTAL ACUMULADO:<br>$${precioTotalCarrito}</div>`;
+        tbody.appendChild(rowPrecioCarrito);
+}
